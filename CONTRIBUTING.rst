@@ -12,7 +12,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/seanbreckenridge/cube_scramble_cli/issues.
+Report bugs at https://github.com/seanbreckenridge/cube-scramble-cli/issues.
 
 If you are reporting a bug, please include:
 
@@ -35,7 +35,7 @@ and "help wanted" is open to whoever wants to implement it.
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/seanbreckenridge/cube_scramble_cli/issues.
+The best way to send feedback is to file an issue at https://github.com/seanbreckenridge/cube-scramble-cli/issues.
 
 If you are proposing a feature:
 
