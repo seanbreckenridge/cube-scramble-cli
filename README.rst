@@ -44,7 +44,7 @@ Supported Symbols:
   Last Slot and Last Layer Scramble          LAST SLOT AND LAST LAYER
   [Quit]                                     QUIT
 
-After selecting a scramble, you may repeatedly press ``return``/```enter``
+After selecting a scramble, you may repeatedly press ``return``/``enter``
 to generate another scramble of the same type.
 You can generate multiple scrambles of the same type,
 by providing a number after a symbol; e.g. ``3x3 3``
