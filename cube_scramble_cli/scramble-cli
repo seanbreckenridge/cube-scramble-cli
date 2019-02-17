@@ -18,11 +18,14 @@ help_lines = [
     'Square-1 Scramble                          SQUARE ONE',
     'Skewb Scramble                             SKEWB',
     'Clock scramble                             CLOCK',
-    'Last Layer Scramble                        LAST LAYER',
-    'First 2 Layers Scramble                    FIRST 2 LAYERS',
-    '<MU>-Last Six Edges Scramble               LAST SIX EDGES',
+    'First 2 Layers Scramble                    F2L',
     '<RU>-gen Scramble                          RU SCRAMBLE',
-    'Last Slot and Last Layer Scramble          LAST SLOT AND LAST LAYER',
+    '<MU>-Last Six Edges Scramble               LSE',
+    'CMLL Scramble                              CMLL',
+    'Corners of the Last Layer Scramble         CLL',
+    'Edges of the Last Layer Scramble           ELL'
+    'Last Layer Scramble                        LL',
+    'Last Slot and Last Layer Scramble          LSLL',
     '[Quit]                                     QUIT'
 ]
 
@@ -50,10 +53,13 @@ scrambles = OrderedDict([
     ('SQUARE ONE', squareOneScrambler.get_WCA_scramble),
     ('SKEWB', skewbScrambler.get_WCA_scramble),
     ('CLOCK', clockScrambler.get_WCA_scramble),
-    ('LAST LAYER', scrambler333.get_LL_scramble),
-    ('FIRST 2 LAYERS', scrambler333.get_F2L_scramble),
-    ('LAST SIX EDGES', scrambler333.get_2genMU_scramble),
-    ('LAST SLOT AND LAST LAYER', scrambler333.get_LSLL_scramble),
+    ('LL', scrambler333.get_LL_scramble),
+    ('F2L', scrambler333.get_F2L_scramble),
+    ('LSE', scrambler333.get_2genMU_scramble),
+    ('CMLL', scrambler333.get_CMLL_scramble),
+    ('CLL', scrambler333.get_CLL_scramble),
+    ('ELL', scrambler333.get_ELL_scramble),
+    ('LSLL', scrambler333.get_LSLL_scramble),
     ('RU SCRAMBLE', scrambler333.get_2genRU_scramble),
     ('QUIT', sys.exit)
 ])
@@ -70,7 +76,7 @@ def get_prompt_text(selected_scramble):
         return "> "
     for name in scrambles:
         if hash(selected_scramble) == hash(scrambles[name]):
-            return "[{}]> ".format(name)
+            return f"[{name}]> "
 
 
 def has_int(s):
@@ -80,15 +86,6 @@ def has_int(s):
         return True
     except:
         return False
-
-
-def convert(s):
-    """Convert a string containing an integer to a positive integer less that defined maximum."""
-    if has_int(s):
-        i = int(s)
-        if i < 1:
-            return 1
-        return i
 
 
 def user_input(selected_scramble):
@@ -110,7 +107,7 @@ def user_input(selected_scramble):
                     print(help_text)
                     continue
                 if len(resp_parts) > 1 and has_int(resp_parts[-1]):  # if the user gave a number denoting multiple scrambles
-                    count = convert(resp_parts.pop())
+                    count = int(resp_parts.pop())
                     return scrambles[" ".join(resp_parts)], count
                 else:
                     return scrambles[" ".join(resp_parts)], 1  # if no. of scrambles not specified, assume 1 scramble
@@ -129,7 +126,7 @@ def main():
     selected_scramble = None
     while True:
         selected_scramble, count = user_input(selected_scramble)
-        if count == 1:
+        if count <= 1:
             print(selected_scramble())
         else:
             for n in range(count):

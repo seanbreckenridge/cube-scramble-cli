@@ -6,3 +6,9 @@ History
 ------------------
 
 * Migrate from script to package.
+
+0.2.0 (2019-02-17)
+------------------
+
+* Add CMLL, ELL, CLL
+* Shorten certain scrambles to their acronyms
