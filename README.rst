@@ -2,7 +2,12 @@
 cube scramble cli
 =================
 
-.. image:: https://img.shields.io/pypi/v/cube_scramble_cli.svg
+|ver_no| |py_ver|
+
+.. |ver_no| image:: https://img.shields.io/pypi/v/cube_scramble_cli.svg
+        :target: https://pypi.python.org/pypi/cube_scramble_cli
+
+.. |py_ver| image:: https://img.shields.io/pypi/pyversions/cube_scramble_cli.svg
         :target: https://pypi.python.org/pypi/cube_scramble_cli
 
 
