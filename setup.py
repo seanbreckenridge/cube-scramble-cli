@@ -9,14 +9,14 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['colorama', 'prompt_toolkit', 'pyTwistyScrambler']
+requirements = ['colorama>=0.4.1', 'prompt_toolkit>=2.0.8', 'pyTwistyScrambler>=1.2']
 
 setup(
     author="Sean Breckenridge",
     author_email='seanbrecke@gmail.com',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
-        'Intended Audience :: Developers',
+        'Development Status :: 3 - Alpha',
+        'Intended Audience :: End Users/Desktop',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3.6',
