@@ -45,14 +45,12 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `cube_scramble_cli` for local development.
-
-1. Fork the `cube_scramble_cli` repo on GitHub.
+1. Fork the ``cube-scramble-cli`` repo on GitHub.
 2. Clone your fork locally::
 
     $ git clone git@github.com:your_name_here/cube_scramble_cli.git
 
-3. Install your local copy into a pipenv. Assuming you have pipenv installed:
+3. Install your local copy into a pipenv_. Assuming you have pipenv installed::
 
     $ cd cube_scramble_cli
     $ pipenv install
@@ -72,3 +70,5 @@ Ready to contribute? Here's how to set up `cube_scramble_cli` for local developm
     $ git push origin name-of-your-bugfix-or-feature
 
 7. Submit a pull request through the GitHub website.
+
+.. _pipenv: https://pipenv.readthedocs.io/en/latest/
