@@ -48,11 +48,11 @@ Get Started!
 1. Fork the ``cube-scramble-cli`` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/cube_scramble_cli.git
+    $ git clone git@github.com:your_name_here/cube-scramble-cli.git
 
 3. Install your local copy into a pipenv_. Assuming you have pipenv installed::
 
-    $ cd cube_scramble_cli
+    $ cd cube-scramble-cli
     $ pipenv install
     $ pipenv shell
     $ python3 setup.py develop
