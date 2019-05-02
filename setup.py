@@ -27,15 +27,19 @@ setup(
     license="MIT",
     long_description="Requires Python 3.6 | 3.7.\n\n" + \
                     "Installation: python3 -m pip install cube-scramble-cli\n\n" + \
-                    "Run: $ scramble-cli\n\n" + \
+                    "Run: $ cube-scramble-cli\n\n" + \
                     "More info here: https://github.com/seanbreckenridge/cube-scramble-cli",
     long_description_content_type="text/markdown",
     include_package_data=True,
     keywords='cube puzzle scramble',
     name='cube scramble cli',
     packages=find_packages(include=['cube_scramble_cli']),
-    scripts=['cube_scramble_cli/scramble-cli'],
+    entry_points = {
+        'console_scripts': [
+            "cube-scramble-cli = cube_scramble_cli.scramble_cli:main"
+        ]
+    },
     url='https://github.com/seanbreckenridge/cube-scramble-cli',
-    version='0.2.0',
+    version='0.2.1',
     zip_safe=False,
 )

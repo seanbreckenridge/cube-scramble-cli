@@ -12,3 +12,8 @@ History
 
 * Add CMLL, ELL, CLL
 * Shorten certain scrambles to their acronyms
+
+0.2.1 (2019-05-02)
+------------------
+
+* Minor fix to setup.py, use entrypoint instead of console_script, update name from scramble-cli to cube-scramble-cli

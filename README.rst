@@ -25,7 +25,7 @@ Run
 
 ::
 
-    $ scramble-cli
+    $ cube-scramble-cli
 
 Supported Symbols:
 
