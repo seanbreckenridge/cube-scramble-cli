@@ -17,3 +17,8 @@ History
 ------------------
 
 * Minor fix to setup.py, use entrypoint instead of console_script, update name from scramble-cli to cube-scramble-cli
+
+0.2.3 (2019-05-02)
+------------------
+
+* Restructure, move constant values to constants.py
