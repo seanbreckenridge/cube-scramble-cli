@@ -9,7 +9,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['colorama>=0.4.1', 'prompt_toolkit>=2.0.8', 'pyTwistyScrambler>=1.2']
+requirements = ['tabulate>=0.7.4', 'prompt_toolkit>=2.0.8', 'pyTwistyScrambler>=1.2']
 
 setup(
     author="Sean Breckenridge",
@@ -40,6 +40,6 @@ setup(
         ]
     },
     url='https://github.com/seanbreckenridge/cube-scramble-cli',
-    version='0.2.3',
+    version='0.3',
     zip_safe=False,
 )

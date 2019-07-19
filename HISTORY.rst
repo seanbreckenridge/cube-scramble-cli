@@ -22,3 +22,9 @@ History
 ------------------
 
 * Restructure, move constant values to constants.py
+
+0.3 (2019-07-19)
+------------------
+
+* Restructure to allow tests with doctest
+* Remove colorama and use tabulate instead

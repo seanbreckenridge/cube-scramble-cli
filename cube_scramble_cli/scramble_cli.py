@@ -1,70 +1,111 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from cube_scramble_cli.constants import *
+from cube_scramble_cli import *
+
+symbol_completer = WordCompleter(
+    list(scrambles.keys()) + ["HELP"], ignore_case=True)
+session = PromptSession(
+    history=FileHistory(
+        path.join(
+            path.expanduser("~"),
+            ".scramble_history.txt")),
+    completer=symbol_completer,
+    auto_suggest=AutoSuggestFromHistory())
 
 
-def get_prompt_text(selected_scramble):
-    """Returns the prompt for the corresponding function from available scrambles"""
-    if selected_scramble is None:
-        return "> "
-    for name in scrambles:
-        if hash(selected_scramble) == hash(scrambles[name]):
-            return f"[{name}]> "
+def print_help():
+    print("""
+{}
+
+Add a number after a symbol to print multiple scrambles. e.g.: 3x3 5
+""".format(tabulate(help_lines, headers=["Scramble", "Key"], tablefmt="rst")))
 
 
-def has_int(s):
-    """Returns a bool describing whether or not the string can be converted to an integer"""
+def parse_user_input(string_from_user, selected_scramble):
+    """Parses the scramble from the user
+
+    >>> parse_user_input("3X3 5", None)
+    ('3x3', 5)
+    >>> parse_user_input("5", "3x3")
+    ('3x3', 5)
+    >>> parse_user_input("RU SCRAMBLE 3", "MEGAMINX")
+    ('RU SCRAMBLE', 3)
+    >>> parse_user_input("SQUARE ONE 10", "4x4")
+    ('SQUARE ONE', 10)
+    >>> parse_user_input("", "3x3")
+    ('3x3', 1)
+    >>> parse_user_input("5", "4x4")
+    ('4x4', 5)
+    """
+    parts = string_from_user.split()
+    #  if user didn't provide a scramble this time
+    if len(parts) == 0:
+        if selected_scramble is None:
+            raise RuntimeError("You haven't selected a scramble!")
+        else:  # if they provided one last time
+            return selected_scramble, 1
+    # scrambles which have lowercase letters
+    if parts[0] in ["3X3", "4X4", "5X5", "6X6", "7X7"]:
+        parts[0] = parts[0].lower()
+
+    # get number of scrambles
+    count = 1
     try:
-        int(s)
-        return True
-    except:
-        return False
+        count = int(parts[-1])
+        parts.pop()  # remove number of scrambles from key
+    except ValueError:
+        pass
+
+    # if theres a scramble selected and the user entered a number
+    if selected_scramble is not None and len(parts) == 0:
+        return selected_scramble, count
+
+    return " ".join(parts), count
 
 
 def user_input(selected_scramble):
     """Asks user for input, converts to corresponding scramble"""
     while True:
+
+        # get input from user
         try:
-            prompt_text = get_prompt_text(selected_scramble)
+            prompt_text = "> " if selected_scramble is None else "[{}]> ".format(
+                selected_scramble)
             resp = session.prompt(message=prompt_text).strip().upper()
-            resp_parts = resp.split()  # get first 2 tokens
-            if len(resp_parts) == 0:  # input is empty, assume 1 scramble of previously selected scramble
-                if selected_scramble is not None:
-                    return selected_scramble, 1
-                else:
-                    raise KeyError  # no input, print help_text
-            else:
-                if resp_parts[0] in ["3X3", "4X4", "5X5", "6X6", "7X7"]:
-                    resp_parts[0] = resp_parts[0].lower()
-                elif resp_parts[0] == "HELP":
-                    print(help_text)
-                    continue
-                if len(resp_parts) > 1 and has_int(resp_parts[-1]):  # if the user gave a number denoting multiple scrambles
-                    count = int(resp_parts.pop())
-                    return scrambles[" ".join(resp_parts)], count
-                else:
-                    return scrambles[" ".join(resp_parts)], 1  # if no. of scrambles not specified, assume 1 scramble
-        except KeyError:
-            if not resp.strip():
-                print("There was no input!")
-            else:
-                print("Could not find the symbol '{}'".format(" ".join(resp_parts)))
-            print(help_text)
         except (KeyboardInterrupt, EOFError):
             print()  # print a newline
             sys.exit(0)
+        if resp == "HELP":
+            print_help()
+            continue
+
+        # parse user input
+        try:
+            scramble_key, count = parse_user_input(resp, selected_scramble)
+            if scramble_key not in scrambles:
+                print("Could not find the symbol '{}'".format(
+                    scramble_key), file=sys.stderr)
+                print_help()
+                continue
+            else:
+                return scramble_key, count
+        except RuntimeError:
+            print("You haven't selected a scramble!", file=sys.stderr)
+            print_help()
 
 
 def main():
-    selected_scramble = None
+    current_scramble = None
     while True:
-        selected_scramble, count = user_input(selected_scramble)
+        current_scramble, count = user_input(current_scramble)
+        scramble_func = scrambles[current_scramble]
         if count <= 1:
-            print(selected_scramble())
+            print(scramble_func())
         else:
             for n in range(count):
-                print(f"{n+1}. {selected_scramble()}")
+                print(f"{n+1}. {scramble_func()}")
+
 
 if __name__ == "__main__":
     main()

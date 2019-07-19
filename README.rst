@@ -50,11 +50,16 @@ Supported Symbols:
   [Quit]                                     QUIT
 
 After selecting a scramble, you may repeatedly press ``return``/``enter``
-to generate another scramble of the same type.
+to generate another scramble of the same type, or enter a number
+to generate that many scrambles of the selected type.
 You can generate multiple scrambles of the same type,
 by providing a number after a symbol; e.g. ``3x3 3``
 
 Use Ctrl+C or Ctrl+D, or type ``QUIT`` to quit
+
+Tests can be run with:
+
+``python3 -m doctest cube_scramble_cli/scramble_cli.py``
 
 .. _pyTwistyScrambler: https://github.com/euphwes/pyTwistyScrambler
 .. _prompt_toolkit: https://github.com/prompt-toolkit/python-prompt-toolkit
