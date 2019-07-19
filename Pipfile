@@ -5,6 +5,8 @@ verify_ssl = true
 
 [dev-packages]
 twine = "*"
+flake8 = "*"
+autopep8 = "*"
 
 [packages]
 pytwistyscrambler = ">=1.2"
