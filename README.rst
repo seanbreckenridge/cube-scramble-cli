@@ -2,7 +2,7 @@
 cube scramble cli
 =================
 
-|ver_no| |py_ver|
+|ver_no| |py_ver| |prs_welcome|
 
 .. |ver_no| image:: https://img.shields.io/pypi/v/cube_scramble_cli.svg
         :target: https://pypi.python.org/pypi/cube_scramble_cli
@@ -10,6 +10,8 @@ cube scramble cli
 .. |py_ver| image:: https://img.shields.io/pypi/pyversions/cube_scramble_cli.svg
         :target: https://pypi.python.org/pypi/cube_scramble_cli
 
+.. |prs_welcome| image:: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
+        :target: http://makeapullrequest.com
 
 A simple CLI for pyTwistyScrambler_, to generate random states for twisty puzzles.
 
@@ -18,7 +20,7 @@ Installation
 
 ::
 
-    $ python3 -m pip install cube-scramble-cli
+    $ pip3 install cube-scramble-cli
 
 Run
 --------
@@ -47,7 +49,10 @@ Supported Symbols:
   <MU>-Last Six Edges Scramble               LAST SIX EDGES
   <RU>-gen Scramble                          RU SCRAMBLE
   Last Slot and Last Layer Scramble          LAST SLOT AND LAST LAYER
+  [Print Help]                               HELP
   [Quit]                                     QUIT
+
+You can press ``tab`` to scroll through the symbols at the prompt.
 
 After selecting a scramble, you may repeatedly press ``return``/``enter``
 to generate another scramble of the same type, or enter a number

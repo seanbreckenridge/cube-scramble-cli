@@ -26,7 +26,7 @@ setup(
     install_requires=requirements,
     license="MIT",
     long_description="Requires Python 3.6 | 3.7.\n\n" + \
-                    "Installation: python3 -m pip install cube-scramble-cli\n\n" + \
+                    "Installation: pip3 install cube-scramble-cli\n\n" + \
                     "Run: $ cube-scramble-cli\n\n" + \
                     "More info here: https://github.com/seanbreckenridge/cube-scramble-cli",
     long_description_content_type="text/markdown",
