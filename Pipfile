@@ -7,9 +7,9 @@ verify_ssl = true
 twine = "*"
 
 [packages]
-pytwistyscrambler = "*"
-prompt_toolkit = "*"
-colorama = "*"
+pytwistyscrambler = ">=1.2"
+prompt_toolkit = ">=2.0.8"
+tabulate = ">=0.7.4"
 
 [requires]
 python_version = "3"

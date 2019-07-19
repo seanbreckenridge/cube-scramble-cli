@@ -95,7 +95,7 @@ celerybeat-schedule
 .venv
 venv/
 ENV/
-Pipfile.lock
+#Pipfile.lock
 
 # Spyder project settings
 .spyderproject

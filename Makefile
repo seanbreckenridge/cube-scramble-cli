@@ -40,4 +40,4 @@ install: clean ## install the package to the active Python's site-packages
 
 upload-twine: ## uploads to twine, put credentails in ~/.pypirc
 	twine upload -r pypi dist/*
-	
+
