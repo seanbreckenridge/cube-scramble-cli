@@ -14,14 +14,6 @@ session = PromptSession(
     auto_suggest=AutoSuggestFromHistory())
 
 
-def print_help():
-    print("""
-{}
-
-Add a number after a symbol to print multiple scrambles. e.g.: 3x3 5
-""".format(tabulate(help_lines, headers=["Scramble", "Key"], tablefmt="rst")))
-
-
 def parse_user_input(string_from_user, selected_scramble):
     """Parses the scramble from the user
 
@@ -29,8 +21,8 @@ def parse_user_input(string_from_user, selected_scramble):
     ('3x3', 5)
     >>> parse_user_input("5", "3x3")
     ('3x3', 5)
-    >>> parse_user_input("RU SCRAMBLE 3", "MEGAMINX")
-    ('RU SCRAMBLE', 3)
+    >>> parse_user_input("RU 3", "MEGAMINX")
+    ('RU', 3)
     >>> parse_user_input("SQUARE ONE 10", "4x4")
     ('SQUARE ONE', 10)
     >>> parse_user_input("", "3x3")
@@ -46,9 +38,8 @@ def parse_user_input(string_from_user, selected_scramble):
         else:  # if they provided one last time
             return selected_scramble, 1
     # scrambles which have lowercase letters
-    if parts[0] in ["3X3", "4X4", "5X5", "6X6", "7X7"]:
+    if parts[0] in ["2X2", "3X3", "4X4", "5X5", "6X6", "7X7"]:
         parts[0] = parts[0].lower()
-
     # get number of scrambles
     count = 1
     try:
@@ -56,11 +47,9 @@ def parse_user_input(string_from_user, selected_scramble):
         parts.pop()  # remove number of scrambles from key
     except ValueError:
         pass
-
     # if theres a scramble selected and the user entered a number
     if selected_scramble is not None and len(parts) == 0:
         return selected_scramble, count
-
     return " ".join(parts), count
 
 
@@ -70,15 +59,11 @@ def user_input(selected_scramble):
 
         # get input from user
         try:
-            prompt_text = "> " if selected_scramble is None else "[{}]> ".format(
-                selected_scramble)
+            prompt_text = "> " if selected_scramble is None or selected_scramble in non_prompt_symbols else f"[{selected_scramble}]> "
             resp = session.prompt(message=prompt_text).strip().upper()
         except (KeyboardInterrupt, EOFError):
             print()  # print a newline
             sys.exit(0)
-        if resp == "HELP":
-            print_help()
-            continue
 
         # parse user input
         try:
@@ -86,20 +71,40 @@ def user_input(selected_scramble):
             if scramble_key not in scrambles:
                 print("Could not find the symbol '{}'".format(
                     scramble_key), file=sys.stderr)
-                print_help()
+                print(get_help())
                 continue
             else:
                 return scramble_key, count
         except RuntimeError:
             print("You haven't selected a scramble!", file=sys.stderr)
-            print_help()
+            print(get_help())
 
 
 def main():
+    parser = argparse.ArgumentParser(
+        description="A command line based scramble generator and stopwatch")
+    parser.add_argument(
+        "-s",
+        "--print-symbols",
+        action="store_true",
+        help="Print a list of the supported symbols")
+    parser.add_argument(
+        "-H",
+        "--hide-stopwatch",
+        action="store_true",
+        help="When using the stopwatch, don't display the time while solving")
+    args = parser.parse_args()
+    if args.print_symbols:
+        print(get_help())
+        sys.exit(0)
+    if args.hide_stopwatch:
+        scrambles["STOPWATCH"] = lambda: stopwatch(hide_text=True)
     current_scramble = None
     while True:
         current_scramble, count = user_input(current_scramble)
         scramble_func = scrambles[current_scramble]
+        if current_scramble in non_scramble_symbols:  # QUIT, HELP, STOPWATCH
+            count = 1
         if count <= 1:
             print(scramble_func())
         else:

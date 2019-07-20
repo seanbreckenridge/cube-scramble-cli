@@ -3,13 +3,11 @@
 
 from setuptools import setup, find_packages
 
-with open('README.rst') as readme_file:
-    readme = readme_file.read()
-
-with open('HISTORY.rst') as history_file:
-    history = history_file.read()
-
-requirements = ['tabulate>=0.7.4', 'prompt_toolkit>=2.0.8', 'pyTwistyScrambler>=1.2']
+requirements = [
+    'tabulate>=0.7.4',
+    'prompt_toolkit>=2.0.8',
+    'pyTwistyScrambler>=1.2'
+]
 
 setup(
     author="Sean Breckenridge",
@@ -22,24 +20,24 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-    description="A simple CLI for pyTwistyScrambler, to generate random states for twisty puzzles.",
+    description="A CLI for pyTwistyScrambler, to generate random states for twisty puzzles.",
     install_requires=requirements,
     license="MIT",
-    long_description="Requires Python 3.6 | 3.7.\n\n" + \
-                    "Installation: python3 -m pip install cube-scramble-cli\n\n" + \
-                    "Run: $ cube-scramble-cli\n\n" + \
-                    "More info here: https://github.com/seanbreckenridge/cube-scramble-cli",
+    long_description="Requires Python 3.6 | 3.7.\n\n" +
+    "Installation: pip3 install cube-scramble-cli\n\n" +
+    "Run: $ cube-scramble-cli\n\n" +
+    "More info here: https://github.com/seanbreckenridge/cube-scramble-cli",
     long_description_content_type="text/markdown",
     include_package_data=True,
     keywords='cube puzzle scramble',
     name='cube scramble cli',
     packages=find_packages(include=['cube_scramble_cli']),
-    entry_points = {
+    entry_points={
         'console_scripts': [
             "cube-scramble-cli = cube_scramble_cli.scramble_cli:main"
         ]
     },
     url='https://github.com/seanbreckenridge/cube-scramble-cli',
-    version='0.3',
+    version='0.4',
     zip_safe=False,
 )
