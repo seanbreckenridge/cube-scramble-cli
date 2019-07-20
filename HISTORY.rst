@@ -28,3 +28,11 @@ History
 
 * Restructure to allow tests with doctest
 * Remove colorama and use tabulate instead
+
+0.4 (2019-07-20)
+------------------
+
+* Added stopwatch
+* Renamed 'RU SCRAMBLE' to RU
+* Added flags to print scrambles
+* Fixed bug that didn't allow you to generate '2x2' scrambles
