@@ -38,6 +38,11 @@ dist: clean ## builds source and wheel package
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
 
+uninstall: ## uninstalls the package from the pipenv
+	pip3 uninstall -y cube-scramble-cli
+
+reinstall: uninstall install ## uninsalls, then installs
+
 upload-twine: ## uploads to twine, put credentails in ~/.pypirc
 	twine upload -r pypi dist/*
 
