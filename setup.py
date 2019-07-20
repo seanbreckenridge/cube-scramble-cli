@@ -20,7 +20,7 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-    description="A CLI for pyTwistyScrambler, to generate random states for twisty puzzles.",
+    description="A CLI for pyTwistyScrambler, to generate random states for Rubik's cubes/twisty puzzles.",
     install_requires=requirements,
     license="MIT",
     long_description="Requires Python 3.6 | 3.7.\n\n" +
@@ -29,7 +29,7 @@ setup(
     "More info here: https://github.com/seanbreckenridge/cube-scramble-cli",
     long_description_content_type="text/markdown",
     include_package_data=True,
-    keywords='cube puzzle scramble',
+    keywords='cube puzzle scramble rubiks',
     name='cube scramble cli',
     packages=find_packages(include=['cube_scramble_cli']),
     entry_points={

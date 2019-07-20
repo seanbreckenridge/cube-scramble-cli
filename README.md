@@ -2,7 +2,7 @@
 
 [![PyPi version](https://img.shields.io/pypi/v/cube_scramble_cli.svg)](https://pypi.python.org/pypi/cube_scramble_cli) [![Python 3.6|3.7](https://img.shields.io/pypi/pyversions/cube_scramble_cli.svg)](https://pypi.python.org/pypi/cube_scramble_cli) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-A CLI for [pyTwistyScrambler](https://github.com/euphwes/pyTwistyScrambler), to generate random states for twisty puzzles.
+A CLI for [pyTwistyScrambler](https://github.com/euphwes/pyTwistyScrambler), to generate random states for Rubik's cubes/twisty puzzles.
 
 #### Installation
 
@@ -16,12 +16,12 @@ A CLI for [pyTwistyScrambler](https://github.com/euphwes/pyTwistyScrambler), to 
 ❯ cube-scramble-cli -h
 usage: cube-scramble-cli [-h] [-s] [-H]
 
-A command line based scramble generator and stopwatch
+A command line based stopwatch and twisty puzzle scramble generator
 
 optional arguments:
   -h, --help            show this help message and exit
   -s, --print-symbols   Print a list of the supported symbols
-  `-H`, --hide-stopwatch  When using the stopwatch, don't display the time while
+  -H, --hide-stopwatch  When using the stopwatch, don't display the time while
                         solving
 ```
 

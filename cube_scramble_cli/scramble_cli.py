@@ -82,7 +82,7 @@ def user_input(selected_scramble):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="A command line based scramble generator and stopwatch")
+        description="A command line based stopwatch and twisty puzzle scramble generator")
     parser.add_argument(
         "-s",
         "--print-symbols",
