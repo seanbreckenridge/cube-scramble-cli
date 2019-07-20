@@ -3,6 +3,7 @@
 import sys
 from os import path
 from collections import OrderedDict
+import argparse
 
 from tabulate import tabulate
 from prompt_toolkit import PromptSession
@@ -12,6 +13,17 @@ from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
 from pyTwistyScrambler import scrambler333, scrambler444, scrambler222, \
     scrambler555, scrambler666, scrambler777, pyraminxScrambler, \
     megaminxScrambler, squareOneScrambler, skewbScrambler, clockScrambler
+
+from cube_scramble_cli.stopwatch import stopwatch
+
+
+def get_help():
+    return """
+{}
+
+Add a number after a symbol to print multiple scrambles. e.g.: 3x3 5
+""".format(tabulate(help_lines, headers=["Scramble", "Key"], tablefmt="rst"))
+
 
 help_lines = [
     ['3x3 WCA Scramble', '3x3'],
@@ -26,15 +38,20 @@ help_lines = [
     ['Skewb Scramble', 'SKEWB'],
     ['Clock scramble', 'CLOCK'],
     ['First 2 Layers Scramble', 'F2L'],
-    ['<RU>-gen Scramble', 'RU SCRAMBLE'],
+    ['<RU>-gen Scramble', 'RU'],
     ['<MU>-Last Six Edges Scramble', 'LSE'],
     ['CMLL Scramble', 'CMLL'],
     ['Corners of the Last Layer Scramble', 'CLL'],
     ['Edges of the Last Layer Scramble', 'ELL'],
     ['Last Layer Scramble', 'LL'],
     ['Last Slot and Last Layer Scramble', 'LSLL'],
+    ['[Stopwatch]', 'STOPWATCH'],
+    ['[Print Help]', 'HELP'],
     ['[Quit]', 'QUIT']
 ]
+
+non_prompt_symbols = ["HELP", "QUIT"]
+non_scramble_symbols = ["STOPWATCH"] + non_prompt_symbols
 
 scrambles = OrderedDict([
     ('3x3', scrambler333.get_WCA_scramble),
@@ -55,6 +72,8 @@ scrambles = OrderedDict([
     ('CLL', scrambler333.get_CLL_scramble),
     ('ELL', scrambler333.get_ELL_scramble),
     ('LSLL', scrambler333.get_LSLL_scramble),
-    ('RU SCRAMBLE', scrambler333.get_2genRU_scramble),
+    ('RU', scrambler333.get_2genRU_scramble),
+    ('STOPWATCH', stopwatch),
+    ('HELP', get_help),
     ('QUIT', sys.exit)
 ])
