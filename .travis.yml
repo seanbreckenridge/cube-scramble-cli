@@ -6,5 +6,6 @@ python:
 install:
   - 'pip install pipenv'
   - 'pipenv sync'
+  - 'python3 setup.py install'
 script:
   - 'python3 -m doctest cube_scramble_cli/scramble_cli.py'
