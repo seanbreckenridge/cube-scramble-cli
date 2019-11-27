@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import io
+
 from setuptools import setup, find_packages
 
 requirements = [
@@ -8,6 +10,10 @@ requirements = [
     'prompt_toolkit>=2.0.8',
     'pyTwistyScrambler>=1.2'
 ]
+
+with open("README.md", 'r', encoding="utf-8") as readme:
+    readme_contents = readme.read()
+
 
 setup(
     author="Sean Breckenridge",
@@ -24,10 +30,7 @@ setup(
     description="A CLI for pyTwistyScrambler, to generate random states for Rubik's cubes/twisty puzzles.",
     install_requires=requirements,
     license="MIT",
-    long_description="Requires Python 3.6+\n\n" +
-    "Installation: pip3 install cube-scramble-cli\n\n" +
-    "Run: $ cube-scramble-cli\n\n" +
-    "More info here: https://github.com/seanbreckenridge/cube-scramble-cli",
+    long_description=readme_contents,
     long_description_content_type="text/markdown",
     include_package_data=True,
     keywords='cube puzzle scramble rubiks',
