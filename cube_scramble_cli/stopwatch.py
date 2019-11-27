@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import curses
-from time import clock
+from time import perf_counter
 
 def format_time(seconds):
     """Formats time into mm:ss:xx"""
@@ -15,10 +15,10 @@ def run(stdscr, start_time, show_text):
     stdscr.timeout(0)  # non blocking
     while True:
         if show_text:
-            stdscr.addstr(5, 10, format_time(clock() - start_time))
+            stdscr.addstr(5, 10, format_time(perf_counter() - start_time))
         if stdscr.getch() != -1:
-            return format_time(clock() - start_time)
+            return format_time(perf_counter() - start_time)
 
 
 def stopwatch(hide_text=False):
-    return curses.wrapper(run, clock(), not hide_text)
+    return curses.wrapper(run, perf_counter(), not hide_text)

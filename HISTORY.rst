@@ -36,3 +36,8 @@ History
 * Renamed 'RU SCRAMBLE' to RU
 * Added flags to print scrambles
 * Fixed bug that didn't allow you to generate '2x2' scrambles
+
+0.4.1 (2019-11-26)
+------------------
+
+* Replace time.clock (deprecated) with time.perf_counter
