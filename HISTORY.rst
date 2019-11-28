@@ -41,3 +41,8 @@ History
 ------------------
 
 * Replace time.clock (deprecated) with time.perf_counter
+
+0.4.2 (2019-11-27)
+------------------
+
+* Add a gif and improve pypi description
