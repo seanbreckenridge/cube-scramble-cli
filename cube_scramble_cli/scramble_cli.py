@@ -3,13 +3,12 @@
 
 from cube_scramble_cli import *
 
+history_location = environ.get("SCRAMBLE_HISTORY", path.join(path.expanduser("~"), ".scramble_history.txt"))
+
 symbol_completer = WordCompleter(
     list(scrambles.keys()) + ["HELP"], ignore_case=True)
 session = PromptSession(
-    history=FileHistory(
-        path.join(
-            path.expanduser("~"),
-            ".scramble_history.txt")),
+    history=FileHistory(history_location),
     completer=symbol_completer,
     auto_suggest=AutoSuggestFromHistory())
 

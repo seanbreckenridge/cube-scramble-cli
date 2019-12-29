@@ -53,7 +53,7 @@ Last Slot and Last Layer Scramble          LAST SLOT AND LAST LAYER
 [Quit]                                     QUIT
 ```
 
-You can press `tab` to scroll through the symbols at the prompt, and arrow keys scroll through history (stored at `~/.scramble_history.txt`)
+You can press `tab` to scroll through the symbols at the prompt, and arrow keys scroll through history (stored at `~/.scramble_history.txt`. You can change this location by setting the `SCRAMBLE_HISTORY` environment variable describing a different path.)
 
 After selecting a scramble, you may repeatedly press `return`/`enter` to generate another scramble of the same type, or enter a number to generate that many scrambles of the selected type; e.g. `3x3 3`
 

@@ -46,3 +46,8 @@ History
 ------------------
 
 * Add a gif and improve pypi description
+
+0.4.3 (2019-12-29)
+------------------
+
+* Allow user to set environment variable to change the location of the history REPL file.
