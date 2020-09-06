@@ -43,6 +43,6 @@ uninstall: ## uninstalls the package from the pipenv
 
 reinstall: uninstall install ## uninsalls, then installs
 
-upload-twine: ## uploads to twine, put credentails in ~/.pypirc
+upload-twine: ## uploads to twine, put credentials in ~/.pypirc
 	twine upload -r pypi dist/*
 
