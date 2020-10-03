@@ -92,12 +92,22 @@ def main():
         "--hide-stopwatch",
         action="store_true",
         help="When using the stopwatch, don't display the time while solving")
-    args = parser.parse_args()
+    args, leftover = parser.parse_known_args()
     if args.print_symbols:
         print(get_help())
         sys.exit(0)
     if args.hide_stopwatch:
         scrambles["STOPWATCH"] = lambda: stopwatch(hide_text=True)
+    if leftover:
+        try:
+            scramble_key, count = parse_user_input(" ".join(leftover), None)
+            if scramble_key in scrambles:
+                scramble_func = scrambles[scramble_key]
+                for _ in range(count):
+                    print(scramble_func())
+                sys.exit(0)
+        except Exception as e:
+            print("Failed trying to use CLI args as input: ", str(e), file=sys.stderr)
     current_scramble = None
     while True:
         current_scramble, count = user_input(current_scramble)

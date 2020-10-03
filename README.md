@@ -61,6 +61,15 @@ Use Ctrl+C or Ctrl+D, or type `QUIT` to quit
 
 The `STOPWATCH` command will start a stopwatch that stops when any key is pressed. You can use the `-H` flag when starting `cube-scramble-cli` to hide the timer while solving.
 
+If you provide 'user input' as command line arguments, its prints the results and exits without entering interactive mode:
+
+```
+$ cube-scramble-cli 3x3 3
+R' B2 L2 F2 D2 B2 R U2 R' F2 R' U' R B' R2 U2 F' L D R2
+U2 B2 L2 F2 U L2 D' F2 D' U B R B U' R' U B D L'
+D' R' U F2 L' U2 L F' U' D B2 U L2 B2 D' L2 B2 U' F2 R
+```
+
 ###### Tests
 
 `python3 -m doctest cube_scramble_cli/scramble_cli.py`

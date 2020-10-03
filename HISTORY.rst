@@ -51,3 +51,8 @@ History
 ------------------
 
 * Allow user to set environment variable to change the location of the history REPL file.
+
+0.4.4 (2020-09-17)
+------------------
+
+* Unparsed args from the user are interpreted as scramble input.

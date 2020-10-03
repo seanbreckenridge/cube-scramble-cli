@@ -3,7 +3,8 @@ include HISTORY.rst
 include LICENSE
 include README.md
 exclude .travis.yml
-recursive-exclude .github
-
-recursive-exclude * __pycache__
-recursive-exclude * *.py[co]
+recursive-exclude .github *
+include *.lock
+include Makefile
+include Pipfile
+exclude tags*
