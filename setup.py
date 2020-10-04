@@ -38,10 +38,10 @@ setup(
     packages=find_packages(include=['cube_scramble_cli']),
     entry_points={
         'console_scripts': [
-            "cube-scramble-cli = cube_scramble_cli.scramble_cli:main"
+            "cube-scramble-cli = cube_scramble_cli.__main__:main"
         ]
     },
     url='https://gitlab.com/seanbreckenridge/cube-scramble-cli',
-    version='0.4.5',
+    version='0.4.6',
     zip_safe=False,
 )
