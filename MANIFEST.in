@@ -2,6 +2,7 @@ include AUTHORS.rst
 include HISTORY.rst
 include LICENSE
 include README.md
+mypy.ini
 exclude .travis.yml
 recursive-exclude .github *
 include *.lock

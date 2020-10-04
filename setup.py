@@ -42,6 +42,6 @@ setup(
         ]
     },
     url='https://gitlab.com/seanbreckenridge/cube-scramble-cli',
-    version='0.4.4',
+    version='0.4.5',
     zip_safe=False,
 )
