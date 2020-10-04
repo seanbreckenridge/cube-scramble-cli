@@ -84,7 +84,7 @@ symbol_completer = WordCompleter(
 session = PromptSession(
     history=FileHistory(history_location),
     completer=symbol_completer,
-    auto_suggest=AutoSuggestFromHistory())  # type: ignore[var-annotated]
+    auto_suggest=AutoSuggestFromHistory())  # type: ignore
 
 
 def parse_user_input(string_from_user: str, selected_scramble: Optional[str]) -> Tuple[str, int]:
