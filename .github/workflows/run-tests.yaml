@@ -24,7 +24,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install '.'
-        pip install mypy
-    - name: Run mypy
+    - name: Run cli test
       run: |
-        mypy ./cube_scramble_cli
+        python3 -m cube_scramble_cli 3x3
