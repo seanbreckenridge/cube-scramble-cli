@@ -72,6 +72,3 @@ D' R' U F2 L' U2 L F' U' D B2 U L2 B2 D' L2 B2 U' F2 R
 
 This is also accessible through `python3 -m cube_scramble_cli`
 
-###### Tests
-
-`python3 -m doctest cube_scramble_cli/scramble_cli.py`
