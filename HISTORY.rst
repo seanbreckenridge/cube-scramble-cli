@@ -56,3 +56,15 @@ History
 ------------------
 
 * Unparsed args from the user are interpreted as scramble input.
+
+
+0.4.4 (2020-09-17)
+------------------
+
+* Unparsed args from the user are interpreted as scramble input.
+
+
+0.4.5-6 (2020-10-03)
+------------------
+
+* Restructure to allow this to be executable as `python3 -m cube_scramble_cli`
