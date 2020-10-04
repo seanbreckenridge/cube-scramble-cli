@@ -28,6 +28,3 @@ jobs:
     - name: Run mypy
       run: |
         mypy ./cube_scramble_cli
-    - name: Run doctests
-      run: |
-        python -m doctest cube_scramble_cli/scramble_cli.py
