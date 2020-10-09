@@ -68,3 +68,8 @@ History
 ------------------
 
 * Restructure to allow this to be executable as `python3 -m cube_scramble_cli`
+
+0.4.7 (2020-10-08)
+------------------
+
+* Fix CLI arg usage to allow lowercase characters

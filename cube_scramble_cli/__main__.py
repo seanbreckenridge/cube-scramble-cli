@@ -174,7 +174,7 @@ def main() -> None:
         scrambles["STOPWATCH"] = lambda: stopwatch(hide_text=True)
     if leftover:
         try:
-            scramble_key, count = parse_user_input(" ".join(leftover), None)
+            scramble_key, count = parse_user_input(" ".join(map(str.upper, leftover)), None)
             if scramble_key in scrambles:
                 scramble_func = scrambles[scramble_key]
                 for _ in range(count):
