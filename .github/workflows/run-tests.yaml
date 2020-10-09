@@ -27,7 +27,7 @@ jobs:
         pip install mypy
     - name: Test typing; mypy
       run: |
-        mypy ./src/url_metadata
+        mypy ./cube_scramble_cli
     - name: Run basic cli test
       run: |
         python3 -m cube_scramble_cli 3x3
