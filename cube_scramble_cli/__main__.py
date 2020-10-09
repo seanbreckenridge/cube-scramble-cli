@@ -81,7 +81,7 @@ history_location = environ.get("SCRAMBLE_HISTORY", path.join(path.expanduser("~"
 
 symbol_completer = WordCompleter(
     list(scrambles.keys()) + ["HELP"], ignore_case=True)
-session = PromptSession(
+session: PromptSession[str] = PromptSession(
     history=FileHistory(history_location),
     completer=symbol_completer,
     auto_suggest=AutoSuggestFromHistory())  # type: ignore
