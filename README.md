@@ -1,6 +1,6 @@
 # cube-scramble-cli
 
-[![PyPi version](https://img.shields.io/pypi/v/cube_scramble_cli.svg)](https://pypi.python.org/pypi/cube_scramble_cli) [![Python 3.6|3.7](https://img.shields.io/pypi/pyversions/cube_scramble_cli.svg)](https://pypi.python.org/pypi/cube_scramble_cli) [![Build Status](https://travis-ci.com/seanbreckenridge/cube-scramble-cli.svg?branch=master)](https://travis-ci.com/seanbreckenridge/cube-scramble-cli) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![PyPi version](https://img.shields.io/pypi/v/cube_scramble_cli.svg)](https://pypi.python.org/pypi/cube_scramble_cli) [![Python 3.6|3.7](https://img.shields.io/pypi/pyversions/cube_scramble_cli.svg)](https://pypi.python.org/pypi/cube_scramble_cli) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 A CLI for [pyTwistyScrambler](https://github.com/euphwes/pyTwistyScrambler), to generate random states for Rubik's cubes/twisty puzzles.
 
