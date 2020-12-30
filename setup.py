@@ -26,6 +26,7 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
     description="A CLI for pyTwistyScrambler, to generate random states for Rubik's cubes/twisty puzzles.",
     install_requires=requirements,
