@@ -42,7 +42,7 @@ setup(
             "cube-scramble-cli = cube_scramble_cli.__main__:main"
         ]
     },
-    url='https://gitlab.com/seanbreckenridge/cube-scramble-cli',
+    url='https://github.com/seanbreckenridge/cube-scramble-cli',
     version='0.4.7',
     zip_safe=False,
 )
