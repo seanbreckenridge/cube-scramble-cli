@@ -1,5 +1,6 @@
 import curses
 from time import perf_counter
+from typing import Any
 
 
 def format_time(seconds: float, decimals: int) -> str:
@@ -10,9 +11,7 @@ def format_time(seconds: float, decimals: int) -> str:
     return "{:02d}:{:02d}{}".format(int(minutes), int(seconds), centi)
 
 
-def run(
-    stdscr: curses._CursesWindow, start_time: float, show_text: bool, decimals: int
-) -> str:
+def run(stdscr: Any, start_time: float, show_text: bool, decimals: int) -> str:
     curses.echo()  # allow character input
     stdscr.timeout(0)  # non blocking
     while True:
