@@ -14,19 +14,16 @@ Requires python3.7+
 
 #### Run
 
-`$ cube-scramble-cli`
-
 ```
-❯ cube-scramble-cli -h
-usage: cube-scramble-cli [-h] [-s] [-H]
+Usage: cube-scramble-cli [OPTIONS] [ARGS]...
 
-A command line based stopwatch and twisty puzzle scramble generator
+  A command line based stopwatch and twisty puzzle scramble generator
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -s, --print-symbols   Print a list of the supported symbols
-  -H, --hide-stopwatch  When using the stopwatch, don't display the time while
-                        solving
+Options:
+  -s, --print-symbols BOOLEAN   Print a list of supported scrambles
+  -H, --hide-stopwatch BOOLEAN  When using stopwatch, don't display time while
+                                solving
+  --help                        Show this message and exit.
 ```
 
 Supported Symbols:
@@ -53,7 +50,7 @@ Last Slot and Last Layer Scramble          LAST SLOT AND LAST LAYER
 [Quit]                                     QUIT
 ```
 
-You can press `tab` to scroll through the symbols at the prompt, and arrow keys scroll through history (stored at `~/.scramble_history.txt`. You can change this location by setting the `SCRAMBLE_HISTORY` environment variable describing a different path.)
+You can press `tab` to scroll through the symbols at the prompt, and arrow keys scroll through history (stored at `~/.scramble_history.txt`. You can change this location by setting the `SCRAMBLE_HISTORY` environment variable to a different path.)
 
 After selecting a scramble, you may repeatedly press `return`/`enter` to generate another scramble of the same type, or enter a number to generate that many scrambles of the selected type; e.g. `3x3 3`
 
@@ -71,4 +68,3 @@ D' R' U F2 L' U2 L F' U' D B2 U L2 B2 D' L2 B2 U' F2 R
 ```
 
 This is also accessible through `python3 -m cube_scramble_cli`
-
