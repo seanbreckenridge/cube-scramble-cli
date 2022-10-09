@@ -11,7 +11,7 @@ def format_time(seconds: float, decimals: int) -> str:
 
 
 def run(
-    stdscr: curses.window, start_time: float, show_text: bool, decimals: int
+    stdscr: curses._CursesWindow, start_time: float, show_text: bool, decimals: int
 ) -> str:
     curses.echo()  # allow character input
     stdscr.timeout(0)  # non blocking
