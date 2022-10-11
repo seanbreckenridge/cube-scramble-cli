@@ -20,10 +20,9 @@ Usage: cube-scramble-cli [OPTIONS] [ARGS]...
   A command line based stopwatch and twisty puzzle scramble generator
 
 Options:
-  -s, --print-symbols BOOLEAN   Print a list of supported scrambles
-  -H, --hide-stopwatch BOOLEAN  When using stopwatch, don't display time while
-                                solving
-  --help                        Show this message and exit.
+  -s, --print-symbols   Print a list of supported scrambles
+  -H, --hide-stopwatch  When using stopwatch, don't display time while solving
+  --help                Show this message and exit.
 ```
 
 Supported Symbols:

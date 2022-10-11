@@ -174,12 +174,17 @@ def user_input(selected_scramble: Optional[str]) -> Tuple[str, int]:
 
 @click.command()
 @click.option(
-    "-s", "--print-symbols", default=False, help="Print a list of supported scrambles"
+    "-s",
+    "--print-symbols",
+    default=False,
+    is_flag=True,
+    help="Print a list of supported scrambles",
 )
 @click.option(
     "-H",
     "--hide-stopwatch",
     default=False,
+    is_flag=True,
     help="When using stopwatch, don't display time while solving",
 )
 @click.argument("ARGS", nargs=-1, type=click.UNPROCESSED)
