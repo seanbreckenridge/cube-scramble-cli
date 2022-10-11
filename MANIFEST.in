@@ -1,9 +1,0 @@
-include HISTORY.rst
-include LICENSE
-include README.md
-include mypy.ini
-recursive-exclude .github *
-include *.lock
-include Makefile
-include Pipfile
-exclude tags*

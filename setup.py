@@ -13,8 +13,8 @@ setup(
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: End Users/Desktop",
-        "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
@@ -22,7 +22,7 @@ setup(
     ],
     description="A CLI for pyTwistyScrambler, to generate random states for Rubik's cubes/twisty puzzles.",
     install_requires=reqs,
-    license="MIT",
+    license="GPLv3",
     long_description=readme_contents,
     long_description_content_type="text/markdown",
     include_package_data=True,

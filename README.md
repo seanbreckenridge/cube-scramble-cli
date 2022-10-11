@@ -67,3 +67,7 @@ D' R' U F2 L' U2 L F' U' D B2 U L2 B2 D' L2 B2 U' F2 R
 ```
 
 This is also accessible through `python3 -m cube_scramble_cli`
+
+## License
+
+Since this uses [pyTwistyScrambler](https://github.com/euphwes/pyTwistyScrambler) internally, which in turn uses [cstimer](https://github.com/cs0x7f/cstimer) (which is GPL-3.0 licensed), this is GPL'd, so required to be liscened under that as well.
