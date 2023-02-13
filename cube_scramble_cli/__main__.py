@@ -145,7 +145,6 @@ def parse_user_input(
 def user_input(selected_scramble: Optional[str]) -> Tuple[str, int]:
     """Asks user for input, converts to corresponding scramble"""
     while True:
-
         # get input from user
         try:
             prompt_text = (
