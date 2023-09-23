@@ -136,7 +136,7 @@ def parse_user_input(
         parts.pop()  # remove number of scrambles from key
     except ValueError:
         pass
-    # if theres a scramble selected and the user entered a number
+    # if there's a scramble selected and the user entered a number
     if selected_scramble is not None and len(parts) == 0:
         return selected_scramble, count
     return " ".join(parts), count
